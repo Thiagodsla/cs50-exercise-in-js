@@ -79,24 +79,21 @@ function compare_my_votes(candidate_list, cells){
     //console.table(candidate_list)
     let candidate_is_winner = false
     var n = 0;
-
-    ///////////////////////////////////////////////////////////////////////////////////////
-    // for (i = 0 ; i < candidate_list.length ; i++) {
-    //     let candidate_list_vt = candidate_list[i].vt // pega o qt de vt de cada candidate_list  // 4 , 3, 2
-    //     let count_more_voted = 0;
+    for (i = 0 ; i < candidate_list.length ; i++) {
+        let candidate_list_vt = candidate_list[i].vt // pega o qt de vt de cada candidate_list  // 4 , 3, 2
+        let count_more_voted = 0;
         
-    //     if(candidate_list_vt > count_more_voted){ // conta os votos do mais votado
-    //         count_more_voted = candidate_list_vt
-    //     }
+        if(candidate_list_vt > count_more_voted){ // conta os votos do mais votado
+            count_more_voted = candidate_list_vt
+        }
         
-    //     if(count_more_voted > max_voter / 2){
-    //         console.log("O vencedor é:", candidate_list[i].name)
-    //         candidate_is_winner = true
-    //         break
-    //     }
-    // }   
-    ///////////////////////////////////////////////////////////////////////////////////////
-
+        if(count_more_voted > max_voter / 2){
+            console.log("O vencedor é:", candidate_list[i].name)
+            candidate_is_winner = true
+            break
+        }
+    }   
+    
     if ( candidate_is_winner == false){
         
         console.log("O MAIS VOTADO DO 1 TURNO TEVE MENOS DE 50% DOS VOTOS")
