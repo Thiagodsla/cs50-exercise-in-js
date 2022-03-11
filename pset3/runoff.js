@@ -27,24 +27,19 @@ function processElection(cells, candidate_list, count = 'count'){
 
     counted_votes = countVotes(cells, candidates, 'count', 'vt0')
     //console.table(counted_votes)
-    
     if (counted_votes[0][count] > max_voter/2){
         winner_name = counted_votes[0].name
         printWinner(winner_name)
     }else if(counted_votes[0][count] == max_voter / candidates.length){
         //console.log("EMPATE 1 RODADA ^^^^^^^^^^^^")
-        
         counted_votes.forEach(element => {
             element.count = 0
         });
         counted_votes = countVotes(cells, candidates, 'count', 'vt1')
-
         // console.table(counted_votes)
         // console.log("VOTOS VT1 DAS CEDULAS CONTADAS")
-
         winner_name = rankCandidate(counted_votes, cells, candidates, 'vt1', 'vt2')
         printWinner(winner_name)
-        
     }else{
         winner_name = rankCandidate(counted_votes, cells, candidates, 'vt0', 'vt1')
         printWinner(winner_name)
@@ -79,7 +74,6 @@ function rankCandidate (counted_votes, cells, candidates, vt_count_run, vt_secon
     let cells_second_run = eliminatedCandidateCells(cells, candidade_eliminated, vt_count_run)
     let count_second_run = countVotes(cells_second_run, candidates, 'count', vt_second_run)
     //console.table(count_second_run)
-    
     return count_second_run[0].name
 }
 

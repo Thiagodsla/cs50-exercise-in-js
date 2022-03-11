@@ -7,12 +7,7 @@
         <link href="style.css" rel="stylesheet">
         <title>Trivia!</title>
 
-        <script src="./main.js">
-
-            // TODO: Add code to check answers to questions
-            
-
-        </script>
+        <script src="./main.js"></script>
 
     </head>
     <body>
@@ -25,29 +20,37 @@
 
             <div class="section">
                 <h2>Part 1: Multiple Choice </h2>
-                question here
+                <h5><span id="question-one"></span></h5>
                 <hr>              
+
+                
                 <!-- TODO: Add multiple choice question here -->
-                <button type="button" class="btn btn-outline-primary">Primary</button>
-                <button type="button" class="btn btn-outline-primary">Primary</button>
-                <button type="button" class="btn btn-outline-primary">Primary</button>
-                <button type="button" class="btn btn-outline-primary">Primary</button>
+                
+                <span id="button-list"></span> 
 
-                <button type="button" class="btn btn-outline-danger">Danger</button>
-                <button type="button" class="btn btn-outline-success">Success</button>
+                <h5><p id="check-answer-one"></p></h5>
 
-                botao deve ficar verde caso a resposta seja verdadeira
-                Correto - Incorreto
-
+                <!-- botao deve ficar verde caso a resposta seja verdadeira
+                Correto - Incorreto -->
             </div>
-
+            
             <div class="section">
                 <h2>Part 2: Free Response</h2>
-                question here
                 <hr>
+                <h5><span id="question-two"></span></h5>
+                <p></p>
+                <div class="input-group">
+                    <input id="input1" type="text" class="form-control" placeholder="Digite sua resposta." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button onclick="freeResponseClearInput()" class="btn btn-outline-secondary" >Limpar</button>
+                        <button onclick="freeResponse()" class="btn btn-outline-secondary" >Verificar Resposta</button>
+                    </div>
+                </div>
+                
+                <h5><p id='check-answer-two'></p></h5>
 
                 <!-- TODO: Add free response question here -->
-                <p>
+                <!-- <p>
                     Você deve usar um cabeçalho h3 para o texto de sua pergunta.
                 </p>
                 <p>                    
@@ -61,10 +64,12 @@
                 </p>
                 <p>
                     Se o usuário digitar a resposta correta e pressionar o botão de confirmação, o campo de entrada deve ficar verde e o texto deve aparecer abaixo da pergunta que diz “Correto!”.
-                </p>
+                </p> -->
+                
+                
             </div>
-
         </div>
         
     </body>
+    
 </html>
