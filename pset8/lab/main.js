@@ -29,14 +29,12 @@ function checkAnswer(btn_content){
     let btn = document.getElementById(btn_content)
     if(btn_content == correctly_answer){
         btn.setAttribute('class', 'btn btn-outline-success')
-
         document.getElementById('check-answer-one').innerHTML = 'Resposta correta!'
     }else{
         btn.setAttribute('class', 'btn btn-outline-danger')
         setInterval(() => {
             btn.setAttribute('class', 'btn btn-outline-primary')
         }, 1000);
-
         document.getElementById('check-answer-one').innerHTML = 'Resposta incorreta!'
     }
 }
@@ -52,7 +50,9 @@ function freeResponse(){
     document.getElementById('question-two').innerHTML = question_two
 
     let answer = document.getElementById("input1").value
-    if(answer == answer_two){
+    
+    console.log(answer)
+    if(answer === answer_two){
         document.getElementById("check-answer-two").innerHTML = 'Resposta correta!'
         document.getElementById("input1").style.border = "3px solid #0000ff";
     }else if(answer == ''){
