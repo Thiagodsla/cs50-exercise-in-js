@@ -94,3 +94,107 @@
 
 
 //========================================================================
+
+
+
+Write a function redundant that takes in a string str and returns a function that returns str.
+
+Examples
+const f1 = redundant("apple")
+f1() ➞ "apple"
+
+const f2 = redundant("pear")
+f2() ➞ "pear"
+
+const f3 = redundant("")
+f3() ➞ ""
+Notes
+Your function should return a function, not a string.
+
+
+TESTS
+const f1 = redundant("apple")
+const f2 = redundant("pear")
+const f3 = redundant("")
+
+Test.assertEquals(f1(), "apple")
+Test.assertEquals(f2(), "pear")
+Test.assertEquals(f3(), "")
+
+ANSWER
+
+function redundant(str) {
+	return () => str
+}
+
+
+//========================================================================
+
+
+let promise = new Promise( (resolve, reject) => {
+    setTimeout(( ) => {
+       resolve("edabit")
+    }, 1000)
+  })
+
+
+//========================================================================
+
+Examples
+largestSwap(14) ➞ false
+
+largestSwap(53) ➞ true
+
+largestSwap(99) ➞ true
+
+
+If 27 is our input, we should return false because swapping the digits gives us 72, and 72 > 27. On the other hand, swapping 43 gives us 34, and 43 > 34.
+
+function largestSwap(num) {
+	number = num.toString()
+	let num1 = number[1] + number[0]
+	
+	if(num >= num1){
+		return true
+	}else{
+		return false
+	}
+}
+
+
+function largestSwap(num) {
+	return num / 10 > num % 10
+}
+
+//========================================================================
+AINDA PRECISO TESTAR 
+
+https://edabit.com/challenge/iwdZiFucR5wkQsFHu
+class Person {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	compareAge(other) {
+		// Write code here!
+		this.p1.age > this.p2.age
+	}
+}
+
+
+p1 = new Person("Samuel", 24)
+p2 = new Person("Joel", 36)
+p3 = new Person("Lily", 24)
+
+p1.compareAge(p2) ➞ "Joel is older than me."
+
+p2.compareAge(p1) ➞ "Samuel is younger than me."
+
+p1.compareAge(p3) ➞ "Lily is the same age as me."
+
+
+
+
+
+
